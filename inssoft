@@ -1,0 +1,20 @@
+#!/bin/bash
+
+p="tilux"
+p2="get_ip"
+
+if [ ! -d "$p" ]; then
+  echo "Installing $p"
+  git clone https://github.com/endormi/$p
+  echo "Done!"
+else
+  echo "$p Already exist"
+fi
+
+if [ ! -d "$p2" ]; then
+  echo "Installing $p2"
+  git clone https://github.com/endormi/$p2
+  echo "Done!"
+else
+  echo "$p2 Already exist"
+fi
