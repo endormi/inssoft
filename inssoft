@@ -2,13 +2,15 @@
 
 p="tilux"
 p2="get_ip"
+p3="idbf"
+p4="hosts"
 
 if [ ! -d "$p" ]; then
   echo "Installing $p"
   git clone https://github.com/endormi/$p
   echo "Done!"
 else
-  echo "$p Already exist"
+  echo "$p Already exists!"
 fi
 
 if [ ! -d "$p2" ]; then
@@ -16,5 +18,21 @@ if [ ! -d "$p2" ]; then
   git clone https://github.com/endormi/$p2
   echo "Done!"
 else
-  echo "$p2 Already exist"
+  echo "$p2 Already exists!"
+fi
+
+if [ ! -d "$p3" ]; then
+  echo "Installing $p3"
+  git clone https://github.com/0x020/$p3
+  echo "Done!"
+else
+  echo "$p3 Already exists!"
+fi
+
+if [ ! -d "$p4" ]; then
+  echo "Installing $p4"
+  git clone https://github.com/0x020/$p4
+  echo "Done!"
+else
+  echo "$p4 Already exists!"
 fi

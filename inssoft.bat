@@ -3,6 +3,7 @@
 set "p=autocorrect"
 set "p2=get_ip"
 set "p3=kbsc"
+set "p4=idbf"
 
 IF NOT EXIST %p% (
   echo "Cloning %p%..."
@@ -26,4 +27,12 @@ IF NOT EXIST %p3% (
   echo "Done!"
 ) ELSE (
   echo %p3% Already exists!
+)
+
+IF NOT EXIST %p4% (
+  echo "Cloning %p4%..."
+  git clone https://github.com/0x020/%p4%
+  echo "Done!"
+) ELSE (
+  echo %p4% Already exists!
 )
