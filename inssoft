@@ -13,7 +13,7 @@ if [ ! -d "$p" ]; then
     echo "Done!"
   fi
 else
-  echo "$p Already exist"
+  echo "$p Already exists!"
 fi
 
 if [ ! -d "$p2" ]; then
