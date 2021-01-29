@@ -7,11 +7,13 @@ p4="hosts"
 p5="ping"
 
 if [ ! -d "$p" ]; then
-  echo "Installing $p"
-  git clone https://github.com/endormi/$p.git
-  echo "Done!"
+  if [[ `lsb_release -d | grep 'Ubuntu'` != 0 ]]; then
+    echo "Installing $p"
+    git clone https://github.com/endormi/$p.git
+    echo "Done!"
+  fi
 else
-  echo "$p Already exists!"
+  echo "$p Already exist"
 fi
 
 if [ ! -d "$p2" ]; then
