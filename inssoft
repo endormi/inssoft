@@ -5,6 +5,7 @@ p2="get_ip"
 p3="idbf"
 p4="hosts"
 p5="ping"
+p6="find_domain_ip"
 
 if [ ! -d "$p" ]; then
   if [[ `lsb_release -d | grep 'Ubuntu'` != 0 ]]; then
@@ -46,4 +47,12 @@ if [ ! -d "$p5" ]; then
   echo "Done!"
 else
   echo "$p5 Already exists!"
+fi
+
+if [ ! -d "$p6" ]; then
+  echo "Installing $p6"
+  git clone https://github.com/endormi/$p6.git
+  echo "Done!"
+else
+  echo "$p6 Already exists!"
 fi
