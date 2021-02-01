@@ -6,6 +6,7 @@ set "p3=kbsc"
 set "p4=idbf"
 set "p5=ping"
 set "p6=find_domain_ip"
+set "p7=automation"
 
 IF NOT EXIST %p% (
   echo "Cloning %p%..."
@@ -53,4 +54,12 @@ IF NOT EXIST %p6% (
   echo "Done!"
 ) ELSE (
   echo %p6% Already exists!
+)
+
+IF NOT EXIST %p7% (
+  echo "Cloning %p7%..."
+  git clone https://github.com/endormi/%p7%.git
+  echo "Done!"
+) ELSE (
+  echo %p7% Already exists!
 )
