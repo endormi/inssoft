@@ -7,6 +7,7 @@ set "p4=idbf"
 set "p5=ping"
 set "p6=find_domain_ip"
 set "p7=automation"
+set "p8=endormi.2077-theme"
 
 IF NOT EXIST %p% (
   echo "Cloning %p%..."
@@ -62,4 +63,16 @@ IF NOT EXIST %p7% (
   echo "Done!"
 ) ELSE (
   echo %p7% Already exists!
+)
+
+IF EXIST "C:\Users\%username%\.vscode" (
+  set "ext=extensions.txt"
+  code --list-extensions > %ext%
+  find /i "%p8%" %ext% >nul
+  IF ERRORLEVEL 1 (
+    code --install-extension %p8%
+  ) ELSE (
+    echo %p8% Already exists!
+  )
+  DEL %ext%
 )
