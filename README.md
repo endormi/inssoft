@@ -1,8 +1,8 @@
 # Inssoft
 
-> I will be adding more here later
-
 Installing software that I built.
+
+Git clones all to current directory.
 
 Two options:
 
