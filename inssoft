@@ -4,9 +4,8 @@ p="tilux"
 p2="get_ip"
 p3="idbf"
 p4="hosts"
-p5="ping"
-p6="find_domain_ip"
-p7="automation"
+p5="find_domain_ip"
+p6="automation"
 
 if [ ! -d "$p" ]; then
   if [[ `lsb_release -d | grep 'Ubuntu'` != 0 ]]; then
@@ -20,7 +19,7 @@ fi
 
 if [ ! -d "$p2" ]; then
   echo "Installing $p2"
-  git clone https://github.com/endormi/$p2.git
+  git clone https://github.com/0x020/$p2.git
   echo "Done!"
 else
   echo "$p2 Already exists!"
@@ -44,7 +43,7 @@ fi
 
 if [ ! -d "$p5" ]; then
   echo "Installing $p5"
-  git clone https://github.com/0x020/$p5.git
+  git clone https://github.com/endormi/$p5.git
   echo "Done!"
 else
   echo "$p5 Already exists!"
@@ -56,12 +55,4 @@ if [ ! -d "$p6" ]; then
   echo "Done!"
 else
   echo "$p6 Already exists!"
-fi
-
-if [ ! -d "$p7" ]; then
-  echo "Installing $p7"
-  git clone https://github.com/endormi/$p7.git
-  echo "Done!"
-else
-  echo "$p7 Already exists!"
 fi
