@@ -63,8 +63,6 @@ if [ ! -d "$p7" ]; then
     echo "Installing $p7"
     git clone https://github.com/endormi/$p7.git
     echo "Done!"
-  else
-    echo "Emacs not found!"
   fi
 else
   echo "$p7 Already exists!"
