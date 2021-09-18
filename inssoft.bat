@@ -1,12 +1,12 @@
 @echo off
 
 set "p=autocorrect"
-set "p2=get_ip"
-set "p3=kbsc"
-set "p4=idbf"
-set "p5=find_domain_ip"
-set "p6=automation"
-set "p7=endormi.2077-theme"
+set "p2=kbsc"
+set "p3=idbf"
+set "p4=find_domain_ip"
+set "p5=automation"
+set "p6=endormi.2077-theme"
+set "p7=webaimcc-cli"
 
 IF NOT EXIST %p% (
   echo "Cloning %p%..."
@@ -18,7 +18,7 @@ IF NOT EXIST %p% (
 
 IF NOT EXIST %p2% (
   echo "Cloning %p2%..."
-  git clone https://github.com/0x020/%p2%.git
+  git clone https://github.com/endormi/%p2%.git
   echo "Done!"
 ) ELSE (
   echo %p2% Already exists!
@@ -26,7 +26,7 @@ IF NOT EXIST %p2% (
 
 IF NOT EXIST %p3% (
   echo "Cloning %p3%..."
-  git clone https://github.com/endormi/%p3%.git
+  git clone https://github.com/0x020/%p3%.git
   echo "Done!"
 ) ELSE (
   echo %p3% Already exists!
@@ -34,7 +34,7 @@ IF NOT EXIST %p3% (
 
 IF NOT EXIST %p4% (
   echo "Cloning %p4%..."
-  git clone https://github.com/0x020/%p4%.git
+  git clone https://github.com/endormi/%p4%.git
   echo "Done!"
 ) ELSE (
   echo %p4% Already exists!
@@ -48,22 +48,22 @@ IF NOT EXIST %p5% (
   echo %p5% Already exists!
 )
 
-IF NOT EXIST %p6% (
-  echo "Cloning %p6%..."
-  git clone https://github.com/endormi/%p6%.git
-  echo "Done!"
-) ELSE (
-  echo %p6% Already exists!
-)
-
 IF EXIST "C:\Users\%username%\.vscode" (
   set "ext=extensions.txt"
   code --list-extensions > %ext%
-  find /i "%p7%" %ext% >nul
+  find /i "%p6%" %ext% >nul
   IF ERRORLEVEL 1 (
-    code --install-extension %p7%
+    code --install-extension %p6%
   ) ELSE (
-    echo %p7% Already exists!
+    echo %p6% Already exists!
   )
   DEL %ext%
+)
+
+IF NOT EXIST %p7% (
+  echo "Cloning %p7%..."
+  git clone https://github.com/endormi/%p7%.git
+  echo "Done!"
+) ELSE (
+  echo %p7% Already exists!
 )

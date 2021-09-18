@@ -1,12 +1,12 @@
 #!/bin/bash
 
 p="tilux"
-p2="get_ip"
-p3="idbf"
-p4="hosts"
-p5="find_domain_ip"
-p6="automation"
-p7="emacs-init"
+p2="idbf"
+p3="hosts"
+p4="find_domain_ip"
+p5="automation"
+p6="emacs-init"
+p7="webaimcc-cli"
 
 if [ ! -d "$p" ]; then
   if [[ `lsb_release -d | grep 'Ubuntu'` != 0 ]]; then
@@ -36,7 +36,7 @@ fi
 
 if [ ! -d "$p4" ]; then
   echo "Installing $p4"
-  git clone https://github.com/0x020/$p4.git
+  git clone https://github.com/endormi/$p4.git
   echo "Done!"
 else
   echo "$p4 Already exists!"
@@ -51,19 +51,19 @@ else
 fi
 
 if [ ! -d "$p6" ]; then
-  echo "Installing $p6"
-  git clone https://github.com/endormi/$p6.git
-  echo "Done!"
+  if [ -d "$HOME/.emacs.d" ]; then
+    echo "Installing $p6"
+    git clone https://github.com/endormi/$p6.git
+    echo "Done!"
+  fi
 else
   echo "$p6 Already exists!"
 fi
 
 if [ ! -d "$p7" ]; then
-  if [ -d "$HOME/.emacs.d" ]; then
-    echo "Installing $p7"
-    git clone https://github.com/endormi/$p7.git
-    echo "Done!"
-  fi
+  echo "Installing $p7"
+  git clone https://github.com/endormi/$p7.git
+  echo "Done!"
 else
   echo "$p7 Already exists!"
 fi
