@@ -4,7 +4,6 @@ set "theme=endormi.2077-theme"
 
 for %%r in (endormi/autocorrect endormi/kbsc endormi/find_domain_ip endormi/automation endormi/webaimcc-cli 0x020/idbf) do (
     IF NOT EXIST %%r (
-        echo Cloning %%r...
         git clone https://github.com/%%r.git %%r
         echo Done!
     ) ELSE (
