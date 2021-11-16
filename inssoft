@@ -3,13 +3,29 @@
 declare -a proj=(
   "0x020/idbf"
   "0x020/hosts"
+  "endormi/tilux"
   "endormi/find_domain_ip"
   "endormi/automation"
   "endormi/webaimcc-cli"
+  "endormi/emacs-init"
 )
 
 for i in "${proj[@]}"
 do
+  if [ "$i" == "endormi/tilux" ]; then
+    if [[ `lsb_release -d | grep 'Ubuntu'` == 0 ]]; then
+      # skip over
+      continue
+    fi
+  fi
+
+  if [ "$i" == "endormi/emacs-init" ]; then
+    if [ ! -d "$HOME/.emacs.d" ]; then
+      # skip over
+      continue
+    fi
+  fi
+
   if [ ! -d "$i" ]; then
     echo "Installing $i"
     git clone https://github.com/$i.git $i
@@ -18,27 +34,3 @@ do
     echo "$i Already exists!"
   fi
 done
-
-# TODO
-tilux="endormi/tilux"
-emacs="endormi/emacs-init"
-
-if [ ! -d "$tilux" ]; then
-  if [[ `lsb_release -d | grep 'Ubuntu'` != 0 ]]; then
-    echo "Installing $tilux"
-    git clone https://github.com/$tilux.git $tilux
-    echo "Done!"
-  fi
-else
-  echo "$tilux Already exists!"
-fi
-
-if [ ! -d "$emacs" ]; then
-  if [ -d "$HOME/.emacs.d" ]; then
-    echo "Installing $emacs"
-    git clone https://github.com/$emacs.git $emacs
-    echo "Done!"
-  fi
-else
-  echo "$emacs Already exists!"
-fi
