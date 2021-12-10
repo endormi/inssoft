@@ -13,13 +13,5 @@ for %%r in (%list%) do (
 )
 
 IF EXIST "C:\Users\%username%\.vscode" (
-  set "ext=extensions.txt"
-  code --list-extensions > %ext%
-  find /i "%theme%" %ext% >nul
-  IF ERRORLEVEL 1 (
-    code --install-extension %theme%
-  ) ELSE (
-    echo %theme% Already exists!
-  )
-  DEL %ext%
+  code --install-extension %theme%
 )
