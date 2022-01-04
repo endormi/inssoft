@@ -14,13 +14,13 @@ declare -a proj=(
 for i in "${proj[@]}"
 do
   if [ "$i" == "endormi/tilux" ] && [[ `lsb_release -d | grep 'Ubuntu'` == 0 ]]; then
-      # skip over
-      continue
+    # skip over
+    continue
   fi
 
   if [ "$i" == "endormi/emacs-init" ] && [ ! -d "$HOME/.emacs.d" ]; then
-      # skip over
-      continue
+    # skip over
+    continue
   fi
 
   if [ ! -d "$i" ]; then
