@@ -7,7 +7,7 @@ declare -a proj=(
   "endormi/automation"
   "endormi/webaimcc-cli"
   "endormi/emacs-init"
-  "endormi/bin"
+  "endormi/upstream"
 )
 
 for i in "${proj[@]}"
