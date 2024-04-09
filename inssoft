@@ -1,8 +1,6 @@
 #!/bin/bash
 
 declare -a proj=(
-  "0x020/idbf"
-  "0x020/hosts"
   "endormi/tilux"
   "endormi/automation"
   "endormi/webaimcc-cli"

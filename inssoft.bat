@@ -1,6 +1,6 @@
 @echo off
 
-set "list=endormi/autocorrect endormi/kbsc endormi/automation endormi/webaimcc-cli 0x020/idbf"
+set "list=endormi/autocorrect endormi/kbsc endormi/automation endormi/webaimcc-cli"
 set "theme=endormi.2077-theme"
 
 for %%r in (%list%) do (
